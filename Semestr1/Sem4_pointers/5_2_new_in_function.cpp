@@ -12,5 +12,5 @@ int main() {
     int* foo = Foo();
     *foo = 10;
     std::cout << *foo << '\n';
-    delete foo;
+    // delete foo;
 }

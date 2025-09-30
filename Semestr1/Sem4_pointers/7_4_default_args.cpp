@@ -5,7 +5,7 @@ void Foo(int a = 10, int b = 20) {
 }
 
 //// CE, redefinition
-// void Foo(int a, int b = 20);
+// void Foo(int a, int b = 10);
 
 //// CE, all subsequent parameters must have a default argument
 // void Bar(int a = 10, int b);

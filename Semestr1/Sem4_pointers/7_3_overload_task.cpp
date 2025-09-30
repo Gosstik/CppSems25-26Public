@@ -5,7 +5,7 @@ void Foo(int) {
 }
 
 void Foo(double) {
-    std::cout << 1 << '\n';
+    std::cout << 2 << '\n';
 }
 
 int main() {

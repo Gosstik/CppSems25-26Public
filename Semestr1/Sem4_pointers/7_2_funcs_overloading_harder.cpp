@@ -26,4 +26,7 @@ int main() {
 
     Foo(a); // OK
     // Foo(b); // CE
+
+    Foo(1); // OK
+    Foo(1ll); // OK
 }

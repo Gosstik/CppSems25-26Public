@@ -5,7 +5,7 @@ void PrintMatrix(int a[][3], size_t height) {
     // a[i][j] == *(a + i * 3 + j)
     std::cout << "Print matrix:\n";
     for (size_t i = 0; i < height; ++i) {
-        for (size_t j = 0; j < 5; ++j) {
+        for (size_t j = 0; j < 3; ++j) {
             std::cout << a[i][j] << ' ';
         }
         std::cout << '\n';
@@ -17,7 +17,6 @@ void PrintMatrix(int a[][3], size_t height) {
 // void PrintMatrix(int a[][], size_t height);
 
 void PrintMatrix(const std::vector<std::vector<int>>& vv) {
-    // a[i][j] == *(a + i * 3 + j)
     std::cout << "Print matrix:\n";
     for (size_t i = 0; i < vv.size(); ++i) {
         for (size_t j = 0; j < vv[i].size(); ++j) {
@@ -36,7 +35,7 @@ int main() {
     PrintMatrix(b, 5);
 
     //// CE
-    // int c[3][5] = {};
+    int c[3][5] = {};
     // PrintMatrix(c, 5);
 
     //// CE

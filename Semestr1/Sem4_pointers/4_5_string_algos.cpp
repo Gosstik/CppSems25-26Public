@@ -21,7 +21,7 @@ void StrlenExample() {
     // Difference sizeof() and strlen(): O(1) and O(len)
     // sizeof() --- compile time concept, it is REPLACED WITH VALUES in asm
     // strlen() --- runtime concept, it is evaluated in cycle
-    const char* s = "abc\0def";
+    const char s[] = "abc\0def";
     std::cout << strlen(s) << ' ' << sizeof(s) << '\n';
 }
 
@@ -61,13 +61,24 @@ void ConversionsExample() {
     std::cout << std::to_string(res) + std::to_string(res) << '\n';
 }
 
+void StrcpyImpl(char* dest, const char* src) {
+    for (size_t i = 0; true; ++i) {
+        if (src[i] == '\0') {
+            dest[i] = '\0';
+            break;
+        }
+        dest[i] = src[i];
+    }
+}
+
 void StrcpyExample() {
     // strcpy
 
     const char* src = "Some short string";
     // ...
-    char buf[100]{};
+    char buf[100];
     strcpy(buf, src);
+    // StrcpyImpl(buf, src);
     size_t len = strlen(buf);
     for (size_t i = 0; i < len; ++i) {
       std::cout << buf[i];
@@ -84,23 +95,24 @@ void MemcpyExample() {
     size_t a2_len = sizeof(a2) / sizeof(int);
 
     memcpy(a1, a2, std::min(sizeof(a1), sizeof(a2))); // OK
-    // memcpy(a1, a1 + 1, (a1_len - 1) * sizeof(int)); // UB
-    // memmove(a1, a1 + 1, (a1_len - 1) * sizeof(int)); // OK
 
-    // std::copy(a1, a1 + a1_len - 1, a1 + 1); // UB
-    // std::copy_backward(a1, a1 + a1_len - 1, a1 + 1); // OK
+    // memcpy(a1 + 1, a1, (a1_len - 1) * sizeof(int)); // UB
+    // memmove(a1 + 1, a1, (a1_len - 1) * sizeof(int)); // OK
+
+    // std::copy(a1 + 1, a1 + a1_len - 1, a1); // OK
+    // std::copy_backward(a1 + 1, a1 + a1_len - 1, a1); // UB
 
     for (size_t i = 0; i < a1_len; ++i) {
       std::cout << a1[i] << ' ';
     }
+    std::cout << '\n';
 
     char c[] = "Hello"; // char[]
-
-    std::cout << '\n';
 
     for (size_t i = 0; i < a2_len; ++i) {
       std::cout << a2[i] << ' ';
     }
+    std::cout << '\n';
 
     // memcpy vs strcpy: "abc\0cde"
 }
@@ -125,10 +137,10 @@ void CopyExample() {
 }
 
 int main() {
-    StrlenExample();
-    StrcmpExample();
-    ConversionsExample();
-    StrcpyExample();
+    // StrlenExample();
+    // StrcmpExample();
+    // ConversionsExample();
+    // StrcpyExample();
     MemcpyExample();
-    CopyExample();
+    // CopyExample();
 }

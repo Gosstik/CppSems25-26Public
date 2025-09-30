@@ -1,5 +1,4 @@
 #include <algorithm>
-#include <cstdint>
 #include <iostream>
 
 // Descending order
@@ -10,7 +9,7 @@ bool CmpAsc(int lhs, int rhs) { return lhs < rhs; }
 
 int main() {
     {
-        // Basics
+        // Motivation
 
         int arr[] = {2, 6, 9, 3, 5};
 
@@ -26,13 +25,10 @@ int main() {
 
         bool (*p)(int, int) = CmpDesc;  // function to pointer conversion
         p = CmpAsc;
+        std::cout << p(1, 2) << '\n';
         // p = nullptr;
 
         // without cast p simply 1 or 0
         std::cout << (void*)p << '\n';
-    }
-
-    {
-        // Default arguments (on cppreference)
     }
 }

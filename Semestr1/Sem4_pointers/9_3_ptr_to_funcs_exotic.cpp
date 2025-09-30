@@ -19,6 +19,9 @@ int main() {
     void (*(*ppfa)())(int);  // ptr to f that accepts 0 args and returns func
                              // that accepts int and returns void
 
+    void (*(*bar)(int))(int) = Bar; // OK
+    void (*(*pbar)(int))(int) = &Bar; // OK, same as above
+
     size_t** e1[7];                  // ???
     void (*(*pff[10])(int))(int);    // ???
     int (*(*e2)(double, int))(int);  // ???
@@ -28,5 +31,5 @@ int main() {
     int a = 0;
     int((b)) = 4;
 
-    char*(*(**foo[][8])())[] = {};  // ???????????????????????????????
+    char*(*(**foo[][8])())[] = {};  // ???
 }
