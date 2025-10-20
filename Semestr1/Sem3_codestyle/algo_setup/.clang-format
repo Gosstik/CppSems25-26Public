@@ -1,7 +1,0 @@
-# File format:
-# https://clang.llvm.org/docs/ClangFormatStyleOptions.html
----
-BasedOnStyle: Google
-DerivePointerAlignment: false
-PointerAlignment: Left
-AlignOperands: true
