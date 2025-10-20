@@ -1,0 +1,43 @@
+# File format:
+# https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+---
+BasedOnStyle: Google
+---
+Language: Cpp
+
+# ColumnLimit: 120 # default is 80
+# IndentWidth: 4 # default is 2
+IndentWidth: 2
+AccessModifierOffset: -1
+
+# Do not glue the parameters into one line if they are splitted to several
+AllowAllParametersOfDeclarationOnNextLine: true
+BinPackParameters: false
+BinPackArguments: false
+
+# AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLambdasOnASingleLine: Empty
+
+DerivePointerAlignment: false # default is true and PointerAlignment is ignored
+PointerAlignment: Left
+ReferenceAlignment: Left # by default = PointerAlignment
+
+SortIncludes: CaseSensitive
+IncludeBlocks: Preserve
+PackConstructorInitializers: CurrentLine
+BreakConstructorInitializers: BeforeColon
+# BreakConstructorInitializers: BeforeComma # functional programming
+BreakInheritanceList: BeforeColon
+# BreakInheritanceList: BeforeComma # functional programming
+AlignEscapedNewlines: Left
+
+AlignAfterOpenBracket: AlwaysBreak
+
+# AlignTrailingComments: false
+
+InsertNewlineAtEOF: true # not compatible with clangd
+
+AlignOperands: Align
+---
+# Other Languages
