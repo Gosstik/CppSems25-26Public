@@ -1,0 +1,36 @@
+# Exclude file that is located in the root relative to current directory
+/file.txt
+
+# Exclude directory (note trailing /)
+/dir/
+
+# Exclude all "file.txt" files in current directory and its subdirectories
+file.txt
+
+# Another syntax for excluding all "dir" directories in current directory and its subdirectories
+/**/dir/*
+
+### What is the difference between /dir/ and /dir/*:
+
+### /dir/:
+### - marks the directory entry itself as excluded
+### - git doesn't enter the directory at all
+### - no patterns for files inside /dir/ are ever checked
+
+### /dir/*:
+### - git enters the directory (directory itself is not excluded)
+### - git evaluates patterns for each item inside
+### - re-inclusion patterns can be applied to those items
+
+### That is NOT working (file.txt will not be included)
+# /dir/
+# !/dir/file.txt
+
+### That is working (file.txt will be included)
+# /dir/*
+# !/dir/file.txt
+
+### Possible syntax to force include important.txt
+### Will not affect /dir/important.txt because of "/dir/" rule
+### Affects /outer/dir/important.txt
+!/**/important.txt

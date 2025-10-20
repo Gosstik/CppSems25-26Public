@@ -1,0 +1,13 @@
+# IDE
+.idea
+.vscode
+.clangd_cc
+
+# dev
+tmp
+.DS_Store
+.Trash-1000
+
+# Cpp
+cmake-build*
+vscode-build*
