@@ -2,7 +2,7 @@
 #include <vector>
 
 // 1. Use int64_t
-// 2. Prefer ++i over i++
+// 2. Prefer ++i over i++ (no performance increase in that case)
 // 3. Simplify ternary operator
 
 int main() {

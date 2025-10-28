@@ -15,17 +15,17 @@
 
 // or simply ToString(...)
 std::string TransformToString(
-    const std::vector<int64_t>& integer, size_t digits_pre_block_count) {
+    const std::vector<int64_t>& integers, const size_t digits_pre_block_count) {
   std::string result;
 
-  if (integer.empty()) {
+  if (integers.empty()) {
     return result;
   }
 
-  result += std::to_string(integer.back());
+  result += std::to_string(integers.back());
 
-  for (size_t i = 1; i < integer.size(); ++i) {
-    int64_t cur_block = integer[integer.size() - i - 1];
+  for (size_t i = 1; i < integers.size(); ++i) {
+    int64_t cur_block = integers[integers.size() - i - 1];
     std::string cur_block_str = std::to_string(cur_block);
 
     size_t active_digits_count = cur_block_str.size();

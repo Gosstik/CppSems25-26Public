@@ -21,12 +21,21 @@ public:
     }
 
 private:
+    // Usings and typedefs style do not depend on access modificator
+    using SizeType3 = uint64_t;
 
     int GetImplField() {
         return impl_field_;
     }
 
     int impl_field_ = 1;
+
+ protected:
+    int GetProtField() {
+        return impl_field_;
+    }
+
+    int prot_field_ = 2;
 };
 
 }  // namespace my_ns

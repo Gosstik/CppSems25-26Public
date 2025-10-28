@@ -26,4 +26,5 @@ std::vector<int64_t> UpdateBlocks(
   return block;
 }
 
-int main() {}
+int main() {
+}
