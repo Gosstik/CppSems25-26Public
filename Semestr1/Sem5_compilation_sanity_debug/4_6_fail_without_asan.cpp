@@ -63,6 +63,10 @@ void Lsd(std::vector<uint64_t>& arr) {
     }
 }
 
+void JustSomeFunctionForStack(std::vector<uint64_t>& arr) {
+    Lsd(arr);
+}
+
 int main() {
     // std::vector<S> v1{{10, 2}, {1, 4}, {1, 1}, {1, -3}, {20, -1}};
     // std::vector<S> v2{{10, 2}, {1, 4}, {1, 1}, {1, -3}, {20, -1}};
@@ -79,7 +83,8 @@ int main() {
     for (size_t i = 0; i < 10; ++i) {
         vals.push_back(gen() % 100);
     }
-    Lsd(vals);
+
+    JustSomeFunctionForStack(vals);
     for (size_t i = 1; i < vals.size(); ++i) {
         if (vals[i] < vals[i - 1]) {
             std::cout << "FAIL\n";

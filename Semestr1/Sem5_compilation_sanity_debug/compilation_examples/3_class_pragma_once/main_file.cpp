@@ -9,4 +9,6 @@ int main() {
     S s{1};
     s.Foo();
     Util();
+
+    Bar();
 }

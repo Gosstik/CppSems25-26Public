@@ -65,6 +65,43 @@ Installation:
 sudo apt-get install build-essential gdb
 ```
 
+#### Cores
+
+```bash
+# Print current limit for core files size
+ulimit -c
+
+# Set max core dump file size to unlimited
+ulimit -c unlimited
+
+# Core files can be stored in
+# - current directory with executable
+# - /cores
+# - somewhere in /var
+# - ...
+sudo find /var -iname "core*"
+
+# To run gdb on core (executable must be compiled with -g and -O0 flags)
+gdb <executable> <core_file>
+gdb a.out gdb a.out /var/lib/apport/coredump/main.cpp.05e0d3b8-f36d-457b-9d83-feb123041c04.2435338.3701524
+
+# Commands in gdb
+bt # print stack trace
+```
+
+Commands in gdb: [cheetsheet](https://www.cs.princeton.edu/courses/archive/fall16/cos432/hw2/gdb-refcard.pdf).
+
+Most commonly used:
+
+- `bt` (backtrace) &mdash; print current stacktrace
+- `list` &mdash; print source code around current position
+- `b` (break) &mdash; set breakpoint
+- `watch p` &mdash; set watchpoint for variable p
+- `print p` &mdash; print value of variable p
+- By step execution: `n` (next), `s` (step), `c` (continue), `f` (finish)
+
+Attach to current process: TODO
+
 ### vscode
 
 #### Installation

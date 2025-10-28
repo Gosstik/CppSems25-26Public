@@ -5,7 +5,7 @@ int main() {
     const char* p = "start";
     {
         std::string str = "abc";  //* make it long to prevent sso
-        p = str.c_str();
+        p = str.data();
     }
     std::cout << p << '\n';
 }

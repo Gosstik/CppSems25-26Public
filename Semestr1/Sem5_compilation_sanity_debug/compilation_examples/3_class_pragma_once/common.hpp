@@ -1,4 +1,6 @@
-// #pragma once
+#pragma once
+
+struct S;
 
 struct S {
     int Foo() {
@@ -7,3 +9,7 @@ struct S {
 
     int val{};
 };
+
+inline int Bar() {
+    return 100;
+}
