@@ -4,7 +4,7 @@ struct Base {
 public:
     int x = 1;
 
-    int Foo() {
+    int PureVirtualFunc() {
         std::cout << "Base::Foo(): " << x << '\n';
         return x;
     }
@@ -14,7 +14,7 @@ struct Derived : Base {
     int y = 2;
 
     void Bar() {
-        std::cout << "Derived::Bar(): " << Foo() << '\n';
+        std::cout << "Derived::Bar(): " << PureVirtualFunc() << '\n';
     }
 
     // int Foo() {
@@ -25,8 +25,8 @@ struct Derived : Base {
 
 int main() {
     Base b;
-    b.Foo(); // OK
+    b.PureVirtualFunc(); // OK
     Derived d;
-    d.Foo(); // OK
+    d.PureVirtualFunc(); // OK
     d.Bar(); // OK
 }

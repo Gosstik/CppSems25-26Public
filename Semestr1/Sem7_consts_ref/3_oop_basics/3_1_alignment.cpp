@@ -2,6 +2,7 @@
 
 struct Node {
     int data;
+    // padding 4 bytes
     Node* next;
 };
 
@@ -14,6 +15,8 @@ static_assert(sizeof(Node) == 16);
 struct Node2 {
     char ch1[5];
     char ch2[3];
+
+    // int ch2[3];
 };
 
 static_assert(sizeof(Node2) == 8);
@@ -44,6 +47,19 @@ struct Flip2 {
 
 static_assert(sizeof(Flip1) == 16);
 static_assert(sizeof(Flip2) == 24);
+
+////////////////////////////////////////////////////////////////////////////////
+
+struct Base {
+    int a;
+};
+
+struct Derived: Base {
+    int b;
+};
+
+static_assert(sizeof(Base) == 4);
+static_assert(sizeof(Derived) == 8);
 
 ////////////////////////////////////////////////////////////////////////////////
 

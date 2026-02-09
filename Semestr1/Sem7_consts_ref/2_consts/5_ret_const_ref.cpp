@@ -9,5 +9,5 @@ const int& Foo(const int& x) { return x; }
 
 int main() {
     int x = Foo(5);
-    std::cout << x;
+    std::cout << x << '\n';
 }

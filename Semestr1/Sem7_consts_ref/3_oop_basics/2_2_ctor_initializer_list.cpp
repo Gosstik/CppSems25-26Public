@@ -31,9 +31,9 @@ class Complex {
 };
 
 int main() {
-    // Possible construction
-    Complex c(5.0);      // ???
-    Complex c2 = 5.0;    // ???
+    // Possible construction (do not try to remember that)
+    Complex c(5.0);      // Direct initialization
+    Complex c2 = 5.0;    // Copy initialization
     Complex c3{5.0};     // Uniform initialization
     Complex c4 = {8.0};  // Aggregate initialization
 }

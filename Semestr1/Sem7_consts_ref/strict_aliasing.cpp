@@ -1,6 +1,6 @@
 #include <iostream>
 
-// Last sem in Semestr2
+// Last sem in Semestr2, now just skip
 
 // strict aliasing
 // ! compile without sanitizers
