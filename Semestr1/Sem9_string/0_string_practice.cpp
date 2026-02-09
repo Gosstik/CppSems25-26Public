@@ -5,8 +5,15 @@
 #include <cstring>
 #include <sstream>
 
-// 1) init reference
-// 2) Delegation constructor
+// 1) Member initializer list (init values before ctor)
+// 2) Delegation ctor - S(n, c) + std::fill, S(const char*) + std::copy
+// 3) Copy/operator= (before, do not implement)
+// 4) ==, <, >, <=
+// 5) Size + const
+// 6) [] + const
+// 7) operator+ (with signature of +=)
+// 8) << and >>
+// 9)
 
 struct A {
     int i;
@@ -164,7 +171,6 @@ int main() {
     std::stringstream ss("   123   ");
     ss >> s;
     std::cout << s << '\n';
-
 
     // std::string s("abc\0def");
     // std::cout << s << '\n';
