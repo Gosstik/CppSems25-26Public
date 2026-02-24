@@ -5,7 +5,7 @@
 // function try block
 // https://en.cppreference.com/w/cpp/language/try
 
-void GetNonzeroWithCheck(int x) noexcept try {
+void GetNonzeroWithCheck(int x) try {
     if (x > 0) {
         throw std::logic_error("x must be <= 0");
     }

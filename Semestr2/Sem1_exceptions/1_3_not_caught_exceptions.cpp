@@ -10,7 +10,7 @@ struct A {
     A(const A&) { std::cout << "A(copy)\n"; }
     ~A() {
         std::cout << "~A\n";
-        // std::cout << '\n' << std::flush;
+        std::cout << '\n' << std::flush;
     }
 };
 

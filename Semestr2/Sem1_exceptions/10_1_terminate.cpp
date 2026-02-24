@@ -9,7 +9,7 @@
 // https://stackoverflow.com/questions/2820285/abort-terminate-or-exit
 
 // std::terminate in contrast with abort() will print type of thrown object
-// and content of e.what() if it is inherited fro std::exception
+// and content of e.what() if it is inherited from std::exception
 
 // Whether stack unwinding is done when an exception goes completely uncaught
 // is implementation defined.

@@ -8,6 +8,7 @@
 
 struct BadPtrWrapper {               // smart ptr
     BadPtrWrapper(int* p) : p(p) {}  // NOLINT
+    BadPtrWrapper(const BadPtrWrapper& other) = default;
     ~BadPtrWrapper() { delete p; }
 
     int* p;

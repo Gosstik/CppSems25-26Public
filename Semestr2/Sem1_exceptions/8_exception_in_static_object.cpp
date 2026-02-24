@@ -28,5 +28,5 @@ int main() {
     }
 
     Foo(1);  // static variable will try to initialize the second time
-    Foo(2);  // no initialization of static variable
+    Foo(0);  // no initialization of static variable
 }

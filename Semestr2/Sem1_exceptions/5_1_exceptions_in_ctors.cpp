@@ -11,6 +11,7 @@ struct S {
         if (x % 2 == 1) {
             throw std::invalid_argument("only even values are acceptable");
         }
+        // 
     }
     ~S() { std::cout << "~S\n"; }
 

@@ -51,7 +51,7 @@ struct S {
         delete p;
     }
 
-    int* p;
+    int* p = nullptr;
     A a;
 };
 

@@ -9,12 +9,12 @@ struct A {
 };
 
 void Foo(bool is_thrown) {
-    A a;
+    // A a;
     if (is_thrown) {
         // throw a;  // NOLINT
 
         // ??? What changes
-        // throw A();  // NOLINT
+        throw A();  // NOLINT
     }
 }
 

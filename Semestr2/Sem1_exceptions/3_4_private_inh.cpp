@@ -5,7 +5,7 @@ struct Base {
 };
 
 struct Derived : private Base {
-    // friend int main(); // even it won't work: [except.handle] (c++23)
+    friend int main(); // even it won't work: [except.handle] (c++23)
 
     int a = 1;
 };

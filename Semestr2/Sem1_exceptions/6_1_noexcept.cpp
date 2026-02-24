@@ -26,6 +26,7 @@ int main() {
     }
 
     try {
+        // Foo();
         // not caught exception in noexcept function calls std::terminate()
         Bar();
     } catch (...) {
