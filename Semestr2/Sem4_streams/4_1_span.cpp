@@ -1,17 +1,10 @@
 #include <iostream>
 #include <span>
 
-// Why to use:
+// Why to use span (C++20):
 // https://stackoverflow.com/questions/45723819/what-is-a-span-and-when-should-i-use-one
 
-// mdspan
-// https://en.cppreference.com/w/cpp/container/mdspan
-
-//// Cast will not work
-// template <typename T>
-// void ReverseData(std::span<T> sp) {
-//   std::swap(sp.front(), sp.back());
-// }
+// !!! No runtime overhead
 
 void ReverseData(std::span<int> sp) {
     std::cout << sp.size() << '\n';
@@ -26,7 +19,7 @@ void ReverseData(std::span<const char> sp) {
 
 int main() {
     int arr[3] = {1, 2, 3};
-    ReverseData(arr);  // CE
+    ReverseData(arr);
     for (size_t i = 0; i < 3; ++i) {
         std::cout << arr[i] << ' ';
     }
