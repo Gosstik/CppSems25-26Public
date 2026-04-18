@@ -10,7 +10,7 @@ struct MyClass {
 
 int main() {
     // Allocate raw memory (no constructor called)
-    char buffer[sizeof(MyClass)];
+    char buffer[sizeof(MyClass)];  // !!! alignas is required
     // void* buffer = malloc(sizeof(MyClass));
 
     // Placement new: construct object at specific address
